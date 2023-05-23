@@ -95,7 +95,7 @@ export default function TableGenerator() {
 
     products.forEach((product) => {
       htmlCode += `
-      <div className="table_container">
+      <div class="table_container">
         <div class="card">
           <span class="product_name">${product.productName}</span>
           <div class="product_image">
