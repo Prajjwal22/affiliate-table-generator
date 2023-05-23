@@ -12,10 +12,8 @@ a {
 }
 
 main {
-  width: 100%;
-  max-width: 1200px;
   margin: auto;
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,6 +22,10 @@ main {
 textarea,input {
   background-color: white;
   border: 1px solid;
+}
+
+.css_textarea {
+  height: 500px;
 }
 
 label {
