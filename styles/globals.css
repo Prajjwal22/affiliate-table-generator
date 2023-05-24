@@ -11,14 +11,6 @@ a {
   text-decoration: none;
 }
 
-main {
-  margin: auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 textarea,input {
   background-color: white;
   border: 1px solid;

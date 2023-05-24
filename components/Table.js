@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { poppins } from "../app/font";
 import "../styles/globals.css";
 import "../styles/table.css";
 import Modal from "./modal";
@@ -97,10 +96,11 @@ export default function TableGenerator() {
       htmlCode += `
       <div class="table_container">
         <div class="card">
+        <img src="/rating.png" width={70} height={50} />
           <span class="product_name">${product.productName}</span>
           <div class="product_image">
             <img src="${
-              product.productImage || "/product.png"
+              product.productImage || "product.png"
             }" width="150" height="150" />
           </div>
           <ul class="product_feat">
@@ -124,19 +124,20 @@ export default function TableGenerator() {
   };
 
   return (
-    <>
-      <div className={`${poppins.className} w-full`}>
-        <div className="flex flex-col items-center justify-center">
+    <main className="flex flex-col items-center max-w-7xl mx-auto">
         <div className="table_container">
           {products.map((product, index) => (
             <div className="card" key={index}>
-              <span className="product_badge">{product.productBadge ||"Best Pick"}</span>
+              <img src="rating.png" width={70} height={50} />
+              <span className="product_badge">
+                {product.productBadge || "Best Pick"}
+              </span>
               <span className="product_name">
                 {product.productName || "Product 1"}
               </span>
               <div className="product_image">
                 <img
-                  src={product.productImage || "/product.png"}
+                  src={product.productImage || "product.png"}
                   width={150}
                   height={150}
                 />
@@ -149,7 +150,6 @@ export default function TableGenerator() {
                   ))
                 ) : (
                   <>
-                    {" "}
                     <li>Product Feature Specs 1</li>
                     <li>Product Feature Specs 1</li>
                     <li>Product Feature Specs 1</li>
@@ -166,7 +166,7 @@ export default function TableGenerator() {
           ))}
         </div>
 
-        <div className="flex flex-row justify-around mt-9 gap-7">
+        <div className="flex flex-row justify-center mt-9 gap-7 w-full flex-wrap">
           {products.map((product, index) => (
             <div className="input_container w-64" key={index}>
               <h1 className="text-lg font-bold underline-offset-1 underline">
@@ -227,17 +227,17 @@ export default function TableGenerator() {
             </div>
           ))}
           <div>
-          <h1 className="text-lg font-bold underline-offset-1 underline">Copy CSS</h1>
-            <textarea className="css_textarea"
-        value={cssToCopy}
-      />
-      <button
-          className="bg-blue-700 text-white p-3 rounded-md w-fit mt-8"
-          onClick={()=>window.navigator.clipboard.writeText(cssToCopy)}
-        >
-          Copy CSS
-        </button>
-      </div>
+            <h1 className="text-lg font-bold underline-offset-1 underline">
+              Copy CSS
+            </h1>
+            <textarea className="css_textarea" value={cssToCopy} readOnly />
+            <button
+              className="bg-blue-700 text-white p-3 rounded-md w-fit mt-8"
+              onClick={() => window.navigator.clipboard.writeText(cssToCopy)}
+            >
+              Copy CSS
+            </button>
+          </div>
         </div>
 
         <button
@@ -245,9 +245,8 @@ export default function TableGenerator() {
           onClick={generateCode}
         >
           Generate Code
-        </button></div>
-      </div>
+        </button>
       {open && <Modal code={code} setOpen={setOpen} />}
-    </>
+      </main>
   );
 }
