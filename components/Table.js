@@ -126,6 +126,7 @@ export default function TableGenerator() {
 
   return (
     <main className="flex flex-col items-center max-w-7xl mx-auto">
+      <h2 className="text-3xl font-bold mb-6">Top 3 Boxex Generator For Affiliate Site</h2>
         <div className="table_container">
           {products.map((product, index) => (
             <div className="card" key={index}>
@@ -227,7 +228,7 @@ export default function TableGenerator() {
               </div>
             </div>
           ))}
-          <div>
+          <div className="flex flex-col items-center">
             <h1 className="text-lg font-bold underline-offset-1 underline">
               Copy CSS
             </h1>
