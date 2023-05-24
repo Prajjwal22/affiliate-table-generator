@@ -94,13 +94,15 @@ export default function TableGenerator() {
 
     products.forEach((product) => {
       htmlCode += `
-      <div class="table_container">
         <div class="card">
-        <img src="/rating.png" width={70} height={50} />
+        <span class="product_badge">
+        ${product.productBadge || "Best Pick"}
+      </span>
+        <img src="https://affiliate-table-generator.vercel.app/rating.png" width={70} height={50} />
           <span class="product_name">${product.productName}</span>
           <div class="product_image">
             <img src="${
-              product.productImage || "product.png"
+              product.productImage || "https://affiliate-table-generator.vercel.app/product.png"
             }" width="150" height="150" />
           </div>
           <ul class="product_feat">
@@ -114,10 +116,9 @@ export default function TableGenerator() {
       }</a>
           </div>
         </div>
-        </div>
       `;
     });
-    setCode(htmlCode);
+    setCode(`<div class="table_container">${htmlCode}</div>`);
     setOpen(true);
     console.log(htmlCode);
     // You can do further processing with the generated HTML code, such as displaying it in a modal or copying it to the clipboard.
