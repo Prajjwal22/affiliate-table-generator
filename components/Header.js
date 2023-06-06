@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Header() {
@@ -9,9 +10,9 @@ export default function Header() {
         </span>
         <div className="flex flex-row gap-7 items-center">
           <span className="cursor-pointer">Home</span>
-          <span className="cursor-pointer">Top 3 Boxes</span>
+          <span className="cursor-pointer"><Link href="/">Top 3 Boxes</Link></span>
           <span className="cursor-pointer">Pros & Cons</span>
-          <span className="cursor-pointer">Product Box</span>
+          <span className="cursor-pointer"><Link href="productbox">Product Box</Link></span>
           <span className="cursor-pointer bg-black text-yellow-400 p-2 rounded">Contact</span>
         </div>
       </div>
