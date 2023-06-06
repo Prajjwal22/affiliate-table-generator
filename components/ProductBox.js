@@ -85,7 +85,7 @@ export default function ProductBox() {
       />
       <img
         class="product_rating"
-        src="/product_box_rating.webp"
+        src="https://affiliate-table-generator.vercel.app/product_box_rating.webp"
         alt="product_image"
       />
       <span class="product_reviews">
@@ -113,7 +113,7 @@ export default function ProductBox() {
         </span>
       </div>
       <a href=${product.link || "#"} class="product_btn">
-        <img src="/cart_icon.png" />
+        <img src="https://affiliate-table-generator.vercel.app/cart_icon.png" />
         <span>${product.button || "View on Amazon"}</span>
       </a>
     </div>
@@ -142,7 +142,7 @@ export default function ProductBox() {
           />
           <img
             className="product_rating"
-            src="/product_box_rating.webp"
+            src="https://affiliate-table-generator.vercel.app/product_box_rating.webp"
             alt="product_image"
           />
           <span className="product_reviews">
@@ -177,7 +177,7 @@ export default function ProductBox() {
             </span>
           </div>
           <a href={product.link || "#"} className="product_btn">
-            <img src="/cart_icon.png" />
+            <img src="https://affiliate-table-generator.vercel.app/cart_icon.png" />
             <span>{product.button || "View on Amazon"}</span>
           </a>
         </div>
