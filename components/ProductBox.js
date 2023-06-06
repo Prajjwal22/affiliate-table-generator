@@ -136,7 +136,7 @@ export default function ProductBox() {
             className="product_image"
             src={
               product.image ||
-              "https://affiliate-table-generator.vercel.app/product.png"
+              "/laptop.jpeg"
             }
             alt="product_image"
           />
@@ -146,34 +146,35 @@ export default function ProductBox() {
             alt="product_image"
           />
           <span className="product_reviews">
-            {product.reviews || "36 Reviews"}
+            {product.reviews || "45 Reviews & Ratings"}
           </span>
         </div>
         <div className="product_right">
           <span className="product_title">
-            {product.name || "IBELL Inverter ARC Welding Machine (IGBT)"}
+            {product.name || "DEAL OF THE DAY HP 15s, 11th Gen Intel Core i5"}
           </span>
           <ul className="product_features">
             {product.features.length > 0 ? (
               product.features.map((feature, i) => <li key={i}>{feature}</li>)
             ) : (
               <>
-                <li>Product Feature Specs 1</li>
-                <li>Product Feature Specs 1</li>
-                <li>Product Feature Specs 1</li>
-                <li>Product Feature Specs 1</li>
+                <li>Processor: Intel Core i5-1155G7 (up to 4.5 GHz with Intel Turbo Boost)</li>
+                <li>Technology(2g), 8 MB L3 cache, 4 cores, 8 threads)</li>
+                <li>Memory: 8 GB DDR4-3200 MHz RAM (1 x 8 GB) Upto 16 GB DDR4-3200 MHz RAM (2 x 8 GB)</li>
+                <li>Storage: 512 GB PCIe NVMe M.2 SSD</li>
+                <li>Graphics: Intel Iris Xe Graphics</li>
               </>
             )}
           </ul>
           <div className="product_pricing">
             <span className="striked_price">
-              {product.oldPrice || "$4,000"}
+              {product.oldPrice || "Rs. 45,990"}
             </span>
             <span className="product_discount">
-              {product.discount || "45%"}
+              {product.discount || "-60%"}
             </span>
             <span className="product_price">
-              {product.newPrice || "$3,000"}
+              {product.newPrice || "Rs. 23,990/-"}
             </span>
           </div>
           <a href={product.link || "#"} className="product_btn">
@@ -222,16 +223,6 @@ export default function ProductBox() {
               />
             </label>
             <label>
-              Product Features:
-              <textarea
-                type="text"
-                rows={5}
-                cols={30}
-                value={product.features.join("\n")}
-                onChange={(e) => handleFeatures(e)}
-              />
-            </label>
-            <label>
               Product Old Price:
               <input
                 type="text"
@@ -271,6 +262,16 @@ export default function ProductBox() {
                 onChange={(e) => handleLink(e)}
               />
             </label>
+<div>
+              Product Features:
+              <textarea
+                type="text"
+                rows={5}
+                cols={30}
+                value={product.features.join("\n")}
+                onChange={(e) => handleFeatures(e)}
+              />
+</div>
           </div>
         </div>
         <div className="flex flex-col items-center">
