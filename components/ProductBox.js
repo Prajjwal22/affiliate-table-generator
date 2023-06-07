@@ -72,54 +72,54 @@ export default function ProductBox() {
   let htmlCode = "";
 
     htmlCode += `
-    <div class="product_box">
-    <span class="product_badge">${product.badge || "Sale"}</span>
-    <div class="product_left">
+    <div class="pbox_box">
+    <span class="pbox_badge">${product.badge || "Sale"}</span>
+    <div class="pbox_left">
       <img
-        class="product_image"
+        class="pbox_image"
         src=${
           product.image ||
           "https://affiliate-table-generator.vercel.app/product.png"
         }
-        alt="product_image"
+        alt=${product.name}
       />
       <img
-        class="product_rating"
+        class="pbox_rating"
         src="https://affiliate-table-generator.vercel.app/product_box_rating.webp"
-        alt="product_image"
+        alt="pbox_image"
       />
-      <span class="product_reviews">
+      <span class="pbox_reviews">
         ${product.reviews || "36 Reviews"}
       </span>
     </div>
-    <div class="product_right">
-      <span class="product_title">
+    <div class="pbox_right">
+      <span class="pbox_title">
         ${product.name || "IBELL Inverter ARC Welding Machine (IGBT)"}
       </span>
-      <ul class="product_features">
+      <ul class="pbox_features">
       ${product.features
         .map((feature) => `<li>${feature}</li>`)
         .join("")}
       </ul>
-      <div class="product_pricing">
+      <div class="pbox_pricing">
         <span class="striked_price">
           ${product.oldPrice || "$4,000"}
         </span>
-        <span class="product_discount">
+        <span class="pbox_discount">
           ${product.discount || "45%"}
         </span>
-        <span class="product_price">
+        <span class="pbox_price">
           ${product.newPrice || "$3,000"}
         </span>
       </div>
-      <a href=${product.link || "#"} class="product_btn">
+      <a href=${product.link || "#"} class="pbox_btn">
         <img src="https://affiliate-table-generator.vercel.app/cart_icon.png" />
         <span>${product.button || "View on Amazon"}</span>
       </a>
     </div>
   </div>
     `;
-  setCode(`<div class="table_container">${htmlCode}</div>`);
+  setCode(`<div class="pbox_container">${htmlCode}</div>`);
   setOpen(true);
   console.log(htmlCode);
   // You can do further processing with the generated HTML code, such as displaying it in a modal or copying it to the clipboard.
@@ -129,31 +129,31 @@ export default function ProductBox() {
     <main className="max-w-5xl m-auto">
     <div className="max-w-screen-xl m-auto p-3">
       <h1 className="text-xl">Product Box</h1>
-      <div className="product_box">
-        <span className="product_badge">{product.badge || "Sale"}</span>
-        <div className="product_left">
+      <div className="pbox_box">
+        <span className="pbox_badge">{product.badge || "Sale"}</span>
+        <div className="pbox_left">
           <img
-            className="product_image"
+            className="pbox_image"
             src={
               product.image ||
               "/laptop.jpeg"
             }
-            alt="product_image"
+            alt="pbox_image"
           />
           <img
-            className="product_rating"
+            className="pbox_rating"
             src="https://affiliate-table-generator.vercel.app/product_box_rating.webp"
-            alt="product_image"
+            alt="pbox_image"
           />
-          <span className="product_reviews">
+          <span className="pbox_reviews">
             {product.reviews || "45 Reviews & Ratings"}
           </span>
         </div>
-        <div className="product_right">
-          <span className="product_title">
+        <div className="pbox_right">
+          <span className="pbox_title">
             {product.name || "DEAL OF THE DAY HP 15s, 11th Gen Intel Core i5"}
           </span>
-          <ul className="product_features">
+          <ul className="pbox_features">
             {product.features.length > 0 ? (
               product.features.map((feature, i) => <li key={i}>{feature}</li>)
             ) : (
@@ -166,18 +166,18 @@ export default function ProductBox() {
               </>
             )}
           </ul>
-          <div className="product_pricing">
+          <div className="pbox_pricing">
             <span className="striked_price">
               {product.oldPrice || "Rs. 45,990"}
             </span>
-            <span className="product_discount">
+            <span className="pbox_discount">
               {product.discount || "-60%"}
             </span>
-            <span className="product_price">
+            <span className="pbox_price">
               {product.newPrice || "Rs. 23,990/-"}
             </span>
           </div>
-          <a href={product.link || "#"} className="product_btn">
+          <a href={product.link || "#"} className="pbox_btn">
             <img src="https://affiliate-table-generator.vercel.app/cart_icon.png" />
             <span>{product.button || "View on Amazon"}</span>
           </a>
