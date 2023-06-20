@@ -6,3 +6,4 @@ export const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
 });
+`2`
